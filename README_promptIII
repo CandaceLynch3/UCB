@@ -1,0 +1,20 @@
+Prompt III - Comparing Classifiers
+Link to repository https://github.com/CandaceLynch3/UCB.git
+
+BUSINESS UNDERSTANDING 
+Portuguese-based bank launched 17 marketing campaigns to drive customer adoption of deposit term accounts.  The campaign was conducted by phone to call target customers.
+
+DATA UNDERSTANDING
+The dataset included bank client details such as age, marital status, education level, and outstanding loan balances as examples along with campaign details and other social & economic information.  The target variable in this set was a binary outcome of Yes or No, representing if the customer opted for the deposit term account or not.  Three features appear to be key in predicting the deposit term account outcome - campaign, pdays, and previous.  These key features captured the number of contacts performed before and after the campaign and the number of days that passed since the last contact was made from the previous campaign.
+
+DATA PREPARATION 
+After analyzing the data, I kept all of the columns in tact since there was no missing values in any of the features.  Based on my assumption that 3 features were of key importance for the prediction, I feature engineered them through Polynomial Features function to help determine which one or combination would best predict the target variable.
+  
+MODELING 
+I created a pipeline to include the polynomial features before splitting the dataset into train and test data.  I then ran logistic regression, knn, and decision tree classifier models on the data/pipeline.
+
+EVALUATION 
+I ran into some challenges when attempting to obtain the logistic regression accuracy score but managed to obtain knn and decision tree scores.  KNN scored with 88% accuracy while Decision Tree scored at 89% with a max depth = 3.  
+
+DEPLOYMENT 
+Based on these findings, using the decision tree approach appears to offer a higher degree of accuracy when predicting if customers will adopt the deposit term account based primarily on the 3 campaign related features.
